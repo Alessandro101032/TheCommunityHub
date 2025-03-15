@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Help Us - The Community Hub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            box-sizing: border-box;
+        }
+    
+        nav {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(90deg, #9D4EDD, #442a69);
+            padding: 16px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #9D4EDD;
+            text-align: center;
+        }
+        .problem {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .problem h3 {
+            color: #6C2EB9;
+        }
+        .problem p {
+            margin: 5px 0;
+        }
+        .problem .category {
+            font-weight: bold;
+        }
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            margin-top: 40px;
+        }
+        .status.open {
+            color: green;
+        }
+
+        .status.pending {
+            color: rgb(186, 186, 63);
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1><a href="index.html" style="color: white; text-decoration: none;">The Community Hub</a></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="report.html">Report Problems</a></li>
+            <li><a href="help.html">Help Us</a></li>
+            <li><a href="join.html">Join Us</a></li>
+            <li><a href="forum.html">Forum</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Help Us Solve These Problems</h2>
+        <div class="problem">
+            <h3>Clean Up the Local Park</h3>
+            <p class="category">Category: Environment</p>
+            <p>Description: The local park is filled with trash, and we need volunteers to help with cleaning up the area.</p>
+            <p>Location: Central Park</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Community Center Roof Repair</h3>
+            <p class="category">Category: Infrastructure</p>
+            <p>Description: The roof of the community center has holes and needs urgent repair.</p>
+            <p>Location: Main Street</p>
+            <p class="status pending">Status: Pending</p>
+        </div>
+        <div class="problem">
+            <h3>Neighborhood Safety Concerns</h3>
+            <p class="category">Category: Community</p>
+            <p>Description: There have been increasing reports of safety issues in the neighborhood. We need patrol volunteers.</p>
+            <p>Location: Oakwood District</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Fix the Broken Sidewalks</h3>
+            <p class="category">Category: Infrastructure</p>
+            <p>Description: Several sidewalks in the downtown area are cracked and uneven, posing a risk to pedestrians. We need volunteers for repair work.</p>
+            <p>Location: Downtown Area</p>
+            <p class="status pending">Status: Pending</p>
+        </div>
+        <div class="problem">
+            <h3>Repainting Community Center Walls</h3>
+            <p class="category">Category: Infrastructure</p>
+            <p>Description: The community center's walls have become dirty and damaged. We need volunteers to help repaint and restore the building.</p>
+            <p>Location: Riverside Avenue</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Homeless Shelter Donations</h3>
+            <p class="category">Category: Social Welfare</p>
+            <p>Description: Our local homeless shelter is in need of donations such as clothing, food, and toiletries to support the community.</p>
+            <p>Location: Downtown Shelter</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Community Garden Development</h3>
+            <p class="category">Category: Environment</p>
+            <p>Description: We're establishing a community garden to grow fresh produce. We need volunteers to help with planting and maintenance.</p>
+            <p>Location: Greenfield</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Free Medical Clinic for the Uninsured</h3>
+            <p class="category">Category: Health</p>
+            <p>Description: A free medical clinic for uninsured residents is in the process of being set up. Volunteers are needed to help with patient intake and support services.</p>
+            <p>Location: Health District</p>
+            <p class="status pending">Status: Pending</p>
+        </div>
+        <div class="problem">
+            <h3>Recycling Program Education</h3>
+            <p class="category">Category: Environment</p>
+            <p>Description: We need volunteers to educate the community on how to effectively recycle. Training sessions and materials will be provided.</p>
+            <p>Location: Various Locations</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Street Lighting Repair</h3>
+            <p class="category">Category: Infrastructure</p>
+            <p>Description: Several street lights are broken in the industrial zone, making it unsafe for pedestrians. Volunteers needed for repairs.</p>
+            <p>Location: Industrial Zone</p>
+            <p class="status pending">Status: Pending</p>
+        </div>
+        <div class="problem">
+            <h3>Backyard Cleanup for the Elderly</h3>
+            <p class="category">Category: Social Welfare</p>
+            <p>Description: Help elderly residents by cleaning and maintaining their yards. This includes lawn mowing, weeding, and general cleanup.</p>
+            <p>Location: Various Neighborhoods</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Community Playground Renovation</h3>
+            <p class="category">Category: Infrastructure</p>
+            <p>Description: The community playground is in need of repair and renovation. Volunteers are needed to help fix the equipment and update the area.</p>
+            <p>Location: Parkside</p>
+            <p class="status pending">Status: Pending</p>
+        </div>
+        <div class="problem">
+            <h3>Food Bank Distribution Event</h3>
+            <p class="category">Category: Social Welfare</p>
+            <p>Description: Volunteers are needed for food sorting and distribution at the local food bank. Your help can make a difference!</p>
+            <p>Location: Main Street Food Bank</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Improve Local Recycling Bins</h3>
+            <p class="category">Category: Environment</p>
+            <p>Description: Some of the local recycling bins are broken and need repairs. We are also looking to add more bins to encourage recycling in high-traffic areas.</p>
+            <p>Location: Downtown Area</p>
+            <p class="status pending">Status: Pending</p>
+        </div>
+        <div class="problem">
+            <h3>Neighborhood Beautification Project</h3>
+            <p class="category">Category: Community</p>
+            <p>Description: Volunteers are needed to help with beautification efforts in the neighborhood, including planting flowers, painting murals, and tidying up public spaces.</p>
+            <p>Location: Maple Street</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Assist at Local Animal Shelter</h3>
+            <p class="category">Category: Animal Welfare</p>
+            <p>Description: The local animal shelter is looking for volunteers to help take care of the animals, clean the cages, and assist with adoption events.</p>
+            <p>Location: Hilltop Shelter</p>
+            <p class="status open">Status: Open</p>
+        </div>
+        <div class="problem">
+            <h3>Mentor at Local After-School Program</h3>
+            <p class="category">Category: Education</p>
+            <p>Description: Volunteers are needed to help mentor students at the local after-school program, providing tutoring and guidance to those in need.</p>
+            <p>Location: Community Center</p>
+            <p class="status pending">Status: Pending</p>
+        </div>
+                    
+    </div>
+    <footer>
+        <p>&copy; 2025 The Community Hub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

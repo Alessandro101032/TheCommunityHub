@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Report a Problem - The Community Hub</title>
+    <title>Join Us - The Community Hub</title>
     <style>
         body::-webkit-scrollbar{
             display: none;
@@ -72,10 +72,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        textarea {
-            resize: vertical;
-        }
-
         .submit-btn {
             background: #9D4EDD;
             color: white;
@@ -110,22 +106,23 @@
         </ul>
     </nav>
     <div class="container">
-        <h2>Report a Problem</h2>
+        <h2>Join Us in Making a Difference</h2>
+        <p>We are looking for passionate individuals to join us in tackling community problems. Whether you want to volunteer or offer other forms of support, we welcome your help!</p>
         <form action="#" method="POST">
-            <label for="category">Category:</label>
-            <select id="category" name="category" required>
-                <option value="environment">Environment</option>
-                <option value="community">Community</option>
-                <option value="infrastructure">Infrastructure</option>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="type">How Would You Like to Help?</label>
+            <select id="type" name="type" required>
+                <option value="donate">Donate</option>
+                <option value="volunteer">Volunteer</option>
+                <option value="spread-awareness">Spread Awareness</option>
                 <option value="other">Other</option>
             </select>
-            <label for="title">Problem Title:</label>
-            <input type="text" id="title" name="title" required>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location">
-            <button type="submit" class="submit-btn">Submit Report</button>
+            <label for="message">Additional Information:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Let us know how you can assist or any skills you would like to contribute"></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
     <footer>

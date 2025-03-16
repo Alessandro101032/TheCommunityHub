@@ -25,12 +25,6 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .container2{
-        max-width: 1300px;
-        margin: auto;
-        padding-left: 25px;
-        padding-right: 25px;
-        }
         h1, h2 {
             color: #333;
         }
@@ -60,6 +54,105 @@
         nav a:hover {
             text-decoration: underline;
         }
+        *{
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+}
+        .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} 
+.brands{
+margin: 100px auto;
+}
+.col-5{
+    width: 160px;
+}
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+.small-container{
+    max-width: 1080px;
+    margin:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+
+
+
+        .container2{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer p{
+    color: #8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col-1{
+    flex-basis: 30px;
+}
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+.footer-col-3, .footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+.app-logo{
+    margin-top: 20px;
+}
+.app-logo img{
+    width: 100px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+}
+.copyright{
+    text-align: center;
+    margin-top: 15px;
+}
+.menu-icon img{
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
     </style>
 </head>
 <body>
@@ -117,27 +210,67 @@
         <p>If you have any questions or concerns regarding these terms, please contact us at [email/contact info].</p>
     </div>
 
-<!------ brands -------->
-    <div class="brands">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-5">
-                    <img src="imagini/logo cola.png">
-                </div>
-                <div class="col-5">
-                    <img src="imagini/logo paypal.png">
-                </div>
-                <div class="col-5">
-                    <img src="imagini/logo samsung.png">
-                </div>
-                <div class="col-5">
-                    <img src="imagini/logo volkswagen.png">
-                </div>
-                <div class="col-5">
-                    <img src="imagini/logo puma.png">
-                </div>
+</div>
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="images/logo cola.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo paypal.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo samsung.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo volkswagen.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo puma.png">
             </div>
         </div>
     </div>
+</div>
+<div class="footer">
+    <div class="container2">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download App</h3>
+                <p>Download App on mobile phone Android and Ios. </p>
+                <div class="app-logo">
+                    <img src="images/logo google play.png">
+                    <img src="images/logo app store.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/logo alb.png">
+                <p>
+                    Our purpose is to make people smile. Our experts will help you with any problem.
+                </p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Cupopons</li>
+                    <li>Blog</li>
+                    <li>The best for the best</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                   <li>Facebook</li>
+                   <li>Twitter</li>
+                   <li>Instagram</li>
+                   <li>You Tube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p> <div class="copyright">&copy; 2025 The Community Hub. All rights reserved.</div></p>
+    </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Gemini</title>
+</head>
+<body>
+    <h1>Chat cu Gemini</h1>
+    <div id="chat-box">
+        <!-- Conversația va fi afișată aici -->
+    </div>
+    <input type="text" id="user-input" placeholder="Scrie un mesaj..." />
+    <button onclick="sendMessage()">Trimite</button>
+
+    <script>
+        // Înlocuiește cu propriul API Key
+        const apiKey = 'API_KEY_GOOGLE_GEMINIAIzaSyAmxyfnwfNTYYan_sXODR72gajqCDjWmP0';  // Pune aici API Key-ul tău obținut de la Google
+        const apiUrl = 'https://api.google.com/gemini/v1/messages';
+
+        function sendMessage() {
+            const userMessage = document.getElementById('user-input').value;
+
+            // Afișează mesajul utilizatorului
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<p><strong>Tu:</strong> ${userMessage}</p>`;
+            document.getElementById('user-input').value = ''; // Goleste câmpul de input
+
+            // Trimite mesajul la API
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    prompt: userMessage,
+                    model: 'gemini', // Utilizează modelul Gemini
+                    max_tokens: 150
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Afișează răspunsul de la chatbot
+                chatBox.innerHTML += `<p><strong>Gemini:</strong> ${data.choices[0].text}</p>`;
+            })
+            .catch(error => {
+                console.error('Eroare:', error);
+            });
+        }
+    </script>
+</body>
+</html>

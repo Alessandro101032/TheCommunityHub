@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Community Hub - Home</title>
+    <style>
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(90deg, #9D4EDD, #442a69);
+            padding: 16px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .header {
+            background: url("./images/hands-together-teamwork-GettyImages-869163826.webp") no-repeat center center/cover        ;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9D4EDD;
+            text-align: center;
+            font-size: 44px;
+            font-weight: bold;
+        }
+        .content {
+            text-align: center;
+            padding: 40px;
+        }
+        .content h2 {
+            color: #9D4EDD;
+        }
+        .button {
+            background: #9D4EDD;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #6C2EB9;
+        }
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    
+    <nav>
+        <h1><a href="index.html" style="color: white; text-decoration: none;">The Community Hub</a></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="report.html">Report Problems</a></li>
+            <li><a href="help.html">Help Us</a></li>
+            <li><a href="join.html">Join Us</a></li>
+            <li><a href="forum.html">Forum</a></li>
+        </ul>
+    </nav>
+    <section class="header">
+        <div style="-webkit-text-stroke: 1px black;">Join us in solving community problems together!</div>
+    </section>
+    <section class="content">
+        <h2>What is The Community Hub?</h2>
+        <p>A platform where one great solution can solve multiple problems. Report issues, collaborate, and make a difference.</p>
+        <button class="button" onclick="location.href='report.html'">Report a Problem</button>
+    </section>
+    <footer>
+        <p>&copy; 2025 The Community Hub. All rights reserved.</p>
+    </footer>
 </body>
 </html>

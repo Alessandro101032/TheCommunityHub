@@ -187,6 +187,9 @@ ul{
     margin-left: 20px;
     display: none;
 }
+.status{
+    color: yellow;
+}
     </style>
 </head>
 <body>
@@ -202,22 +205,28 @@ ul{
     </nav>
     <div class="container">
         <h2>Report a Problem</h2>
-        <form action="#" method="POST">
-            <label for="category">Category:</label>
-            <select id="category" name="category" required>
-                <option value="environment">Environment</option>
-                <option value="community">Community</option>
-                <option value="infrastructure">Infrastructure</option>
-                <option value="other">Other</option>
-            </select>
-            <label for="title">Problem Title:</label>
-            <input type="text" id="title" name="title" required>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location">
-            <button type="submit" class="submit-btn">Submit Report</button>
+        <form id="reportForm">
+            <label>Category(ex: Public Safety,Social Services,Health and Wellness,Infrastructure and Maintenance,Environmental Concerns): <input type="text" id="category" required></label><br>
+            <label>Problem Title: <input type="text" id="title" required></label><br>
+            <label>Description: <textarea id="description" required></textarea></label><br>
+            <label>Location: <input type="text" id="location" required></label><br>
+            <button type="submit">Submit</button>
         </form>
+        <script>
+            document.getElementById("reportForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                
+                var data = {
+                    category: document.getElementById("category").value,
+                    title: document.getElementById("title").value,
+                    description: document.getElementById("description").value,
+                    location: document.getElementById("location").value,
+                    status:"pending"
+                };
+    
+                localStorage.report=JSON.stringify([...JSON.parse(localStorage.report??"[]"),data])
+            });
+        </script>
     </div>
 </div>
 <div class="brands">

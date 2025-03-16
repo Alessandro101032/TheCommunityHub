@@ -1,53 +1,98 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Gemini</title>
+    <title>Community Forum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .post-card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #6a11cb;
+        }
+        .post-meta {
+            font-size: 14px;
+            color: #666;
+        }
+        .post-content {
+            margin-top: 10px;
+        }
+        .post-form {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Chat cu Gemini</h1>
-    <div id="chat-box">
-        <!-- Conversația va fi afișată aici -->
+    <div class="navbar">Community Forum</div>
+    <div class="container">
+        <div class="post-form">
+            <input type="text" id="title" class="input-field" placeholder="Title">
+            <textarea id="content" class="input-field" placeholder="Your message..."></textarea>
+            <button class="submit-btn" onclick="addPost()">Post</button>
+        </div>
+        <div id="posts"></div>
     </div>
-    <input type="text" id="user-input" placeholder="Scrie un mesaj..." />
-    <button onclick="sendMessage()">Trimite</button>
-
     <script>
-        // Înlocuiește cu propriul API Key
-        const apiKey = 'API_KEY_GOOGLE_GEMINIAIzaSyAmxyfnwfNTYYan_sXODR72gajqCDjWmP0';  // Pune aici API Key-ul tău obținut de la Google
-        const apiUrl = 'https://api.google.com/gemini/v1/messages';
-
-        function sendMessage() {
-            const userMessage = document.getElementById('user-input').value;
-
-            // Afișează mesajul utilizatorului
-            const chatBox = document.getElementById('chat-box');
-            chatBox.innerHTML += `<p><strong>Tu:</strong> ${userMessage}</p>`;
-            document.getElementById('user-input').value = ''; // Goleste câmpul de input
-
-            // Trimite mesajul la API
-            fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({
-                    prompt: userMessage,
-                    model: 'gemini', // Utilizează modelul Gemini
-                    max_tokens: 150
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Afișează răspunsul de la chatbot
-                chatBox.innerHTML += `<p><strong>Gemini:</strong> ${data.choices[0].text}</p>`;
-            })
-            .catch(error => {
-                console.error('Eroare:', error);
-            });
+        function addPost() {
+            let title = document.getElementById('title').value;
+            let content = document.getElementById('content').value;
+            if (title && content) {
+                let postContainer = document.createElement('div');
+                postContainer.classList.add('post-card');
+                postContainer.innerHTML = `<div class='post-title'>${title}</div>
+                                          <div class='post-meta'>Posted just now</div>
+                                          <div class='post-content'>${content}</div>`;
+                document.getElementById('posts').prepend(postContainer);
+                document.getElementById('title').value = '';
+                document.getElementById('content').value = '';
+            }
         }
     </script>
 </body>
 </html>
+

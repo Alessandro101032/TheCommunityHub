@@ -192,35 +192,9 @@
     }
     </style>
 </head>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.querySelector("form");
 
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            const type = document.getElementById("type").value;
-            const message = document.getElementById("message").value;
 
-            const userData = {
-                name: name,
-                email: email,
-                password: password,
-                type: type,
-                message: message
-            };
-
-            localStorage.setItem("user", JSON.stringify(userData));
-
-            alert("Te-ai înscris cu succes!");
-            
-            form.reset();
-        });
-    });
-</script>
 
 <body>
     <nav>
@@ -236,7 +210,7 @@
     <div class="container">
         <h2>Join Us in Making a Difference</h2>
         <p>We are looking for passionate individuals to join us in tackling community problems. Whether you want to volunteer or offer other forms of support, we welcome your help!</p>
-        <form action="#" method="POST">
+        <form action="#" method="GET">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Your Email:</label>
@@ -317,5 +291,59 @@
             <p> <div class="copyright">&copy; 2025 The Community Hub. All rights reserved.</div></p>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const formContainer = document.querySelector(".container");
+    const userInfoContainer = document.createElement("div");
+    userInfoContainer.style.display = "none";
+    formContainer.appendChild(userInfoContainer);
+
+    const savedUserData = localStorage.getItem("user");
+    if (savedUserData) {
+        displayUserInfo(JSON.parse(savedUserData));
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const type = document.getElementById("type").value;
+        const message = document.getElementById("message").value;
+
+        const userData = {
+            name: name,
+            email: email,
+            type: type,
+            message: message
+        };
+
+        localStorage.setItem("user", JSON.stringify(userData));
+
+        displayUserInfo(userData);
+    });
+
+    function displayUserInfo(userData) {
+        form.style.display = "none";
+        userInfoContainer.innerHTML = `
+            <h2>Bun venit, ${userData.name}!</h2>
+            <p><strong>Email:</strong> ${userData.email}</p>
+            <p><strong>Tip utilizator:</strong> ${userData.type}</p>
+            <p><strong>Mesaj:</strong> ${userData.message}</p>
+            <button onclick="resetForm()">Modifică datele</button>
+        `;
+        userInfoContainer.style.display = "block";
+    }
+
+    window.resetForm = function () {
+        localStorage.removeItem("user");
+        userInfoContainer.style.display = "none";
+        form.style.display = "block";
+        form.reset();
+    };
+});
+
+    </script>
 </body>
 </html>

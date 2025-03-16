@@ -91,106 +91,137 @@
             background: #6C2EB9;
         }
         *{
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: "Poppins", sans-serif;
-}
-        .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-} 
-.brands{
-margin: 100px auto;
-}
-.col-5{
-    width: 160px;
-}
-.col-5 img{
-    width: 100%;
-    cursor: pointer;
-    filter: grayscale(100%);
-}
-.col-5 img:hover{
-    filter: grayscale(0);
-}
-.small-container{
-    max-width: 1080px;
-    margin:auto;
-    padding-left: 25px;
-    padding-right: 25px;
-}
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+    body{
+        font-family: "Poppins", sans-serif;
+    }
+            .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    } 
+    .brands{
+    margin: 100px auto;
+    }
+    .col-5{
+        width: 160px;
+    }
+    .col-5 img{
+        width: 100%;
+        cursor: pointer;
+        filter: grayscale(100%);
+    }
+    .col-5 img:hover{
+        filter: grayscale(0);
+    }
+    .small-container{
+        max-width: 1080px;
+        margin:auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 
 
 
 
 
-        .container2{
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-.footer{
-    background: #000;
-    color: #8a8a8a;
-    font-size: 14px;
-    padding: 60px 0 20px;
-}
-.footer p{
-    color: #8a8a8a;
-}
-.footer h3{
-    color: #fff;
-    margin-bottom: 20px;
-}
-.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
-    min-width: 250px;
-    margin-bottom: 20px;
-}
-.footer-col-1{
-    flex-basis: 30px;
-}
-.footer-col-2{
-    flex: 1;
-    text-align: center;
-}
-.footer-col-2 img{
-    width: 180px;
-    margin-bottom: 20px;
-}
-.footer-col-3, .footer-col-4{
-    flex-basis: 12%;
-    text-align: center;
-}
-ul{
-    list-style-type: none;
-}
-.app-logo{
-    margin-top: 20px;
-}
-.app-logo img{
-    width: 100px;
-}
-.footer hr{
-    border: none;
-    background: #b5b5b5;
-    height: 1px;
-}
-.copyright{
-    text-align: center;
-    margin-top: 15px;
-}
-.menu-icon img{
-    width: 28px;
-    margin-left: 20px;
-    display: none;
-}
+            .container2{
+        max-width: 1300px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .footer{
+        background: #000;
+        color: #8a8a8a;
+        font-size: 14px;
+        padding: 60px 0 20px;
+    }
+    .footer p{
+        color: #8a8a8a;
+    }
+    .footer h3{
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+        min-width: 250px;
+        margin-bottom: 20px;
+    }
+    .footer-col-1{
+        flex-basis: 30px;
+    }
+    .footer-col-2{
+        flex: 1;
+        text-align: center;
+    }
+    .footer-col-2 img{
+        width: 180px;
+        margin-bottom: 20px;
+    }
+    .footer-col-3, .footer-col-4{
+        flex-basis: 12%;
+        text-align: center;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .app-logo{
+        margin-top: 20px;
+    }
+    .app-logo img{
+        width: 100px;
+    }
+    .footer hr{
+        border: none;
+        background: #b5b5b5;
+        height: 1px;
+    }
+    .copyright{
+        text-align: center;
+        margin-top: 15px;
+    }
+    .menu-icon img{
+        width: 28px;
+        margin-left: 20px;
+        display: none;
+    }
     </style>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const type = document.getElementById("type").value;
+            const message = document.getElementById("message").value;
+
+            const userData = {
+                name: name,
+                email: email,
+                password: password,
+                type: type,
+                message: message
+            };
+
+            localStorage.setItem("user", JSON.stringify(userData));
+
+            alert("Te-ai înscris cu succes!");
+            
+            form.reset();
+        });
+    });
+</script>
+
 <body>
     <nav>
         <h1><a href="index.html" style="color: white; text-decoration: none;">The Community Hub</a></h1>

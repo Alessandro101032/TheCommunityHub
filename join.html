@@ -193,9 +193,6 @@
     </style>
 </head>
 
-
-
-
 <body>
     <nav>
         <h1><a href="index.html" style="color: white; text-decoration: none;">The Community Hub</a></h1>
@@ -256,7 +253,7 @@
             <div class="row">
                 <div class="footer-col-1">
                     <h3>Download App</h3>
-                    <p>Download App on mobile phone Android and Ios. </p>
+                    <p>Download the App on your mobile phone, available on Android and iOS.</p>
                     <div class="app-logo">
                         <img src="images/logo google play.png">
                         <img src="images/logo app store.png">
@@ -271,10 +268,10 @@
                 <div class="footer-col-3">
                     <h3>Useful Links</h3>
                     <ul>
-                        <li>Cupoane</li>
+                        <li>Coupons</li>
                         <li>Blog</li>
-                        <li>Politica de Returnare</li>
-                        <li>Alatura-te Afiliat</li>
+                        <li>Return Policy</li>
+                        <li>Join as an Affiliate</li>
                     </ul>
                 </div>
                 <div class="footer-col-4">
@@ -283,7 +280,7 @@
                        <li>Facebook</li>
                        <li>Twitter</li>
                        <li>Instagram</li>
-                       <li>You Tube</li>
+                       <li>YouTube</li>
                     </ul>
                 </div>
             </div>
@@ -326,12 +323,12 @@
 
     function displayUserInfo(userData) {
         form.style.display = "none";
-        userInfoContainer.innerHTML = `
-            <h2>Bun venit, ${userData.name}!</h2>
+        userInfoContainer.innerHTML = ` 
+            <h2>Welcome, ${userData.name}!</h2>
             <p><strong>Email:</strong> ${userData.email}</p>
-            <p><strong>Tip utilizator:</strong> ${userData.type}</p>
-            <p><strong>Mesaj:</strong> ${userData.message}</p>
-            <button onclick="resetForm()">Modifică datele</button>
+            <p><strong>User Type:</strong> ${userData.type}</p>
+            <p><strong>Message:</strong> ${userData.message}</p>
+            <button onclick="resetForm()">Edit Info</button>
         `;
         userInfoContainer.style.display = "block";
     }
@@ -343,7 +340,6 @@
         form.reset();
     };
 });
-
     </script>
 </body>
 </html>
